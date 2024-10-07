@@ -6,4 +6,3 @@ from .serializers import QuizSerializer
 class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
-
