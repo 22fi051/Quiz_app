@@ -9,7 +9,7 @@ class ChoiceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Choice
-        fields = ["id", "choice_text", "is_correct", "created_at", "updated_at"]
+        fields = ["question_id", "choice_text", "is_correct", "created_at", "updated_at"]
 
 class QuestionSerializer(serializers.ModelSerializer):
 
@@ -19,7 +19,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ["id", "question_text", "created_at", "updated_at", "choices"]
+        fields = ["id", "quiz_id", "question_text", "created_at", "updated_at", "choices"]
 
 class QuizSerializer(serializers.ModelSerializer):
 
@@ -34,3 +34,7 @@ class QuizSerializer(serializers.ModelSerializer):
 class AnswerSerializer(serializers.ModelSerializer):
     question_id = serializers.IntegerField()
     selected_choice_id = serializers.IntegerField()
+
+    class Meta:
+        model = Answer
+        fields = ["question_id", "selected_choice_id"]
