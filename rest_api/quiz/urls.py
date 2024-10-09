@@ -4,9 +4,9 @@ from rest_framework import routers
 from .views import QuizViewSet, QuestionViewSet, ChoiceViewSet, SubmitQuizView
 
 router = routers.DefaultRouter()
-router.register("quiz", QuizViewSet)
-router.register("question", QuestionViewSet)
-router.register("choice", ChoiceViewSet)
+router.register("quiz", QuizViewSet, basename="quiz")
+router.register("question", QuestionViewSet, basename="question")
+router.register("choice", ChoiceViewSet, basename="choice")
 
 urlpatterns = [
     path("", include(router.urls)),

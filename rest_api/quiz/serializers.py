@@ -34,3 +34,7 @@ class QuizSerializer(serializers.ModelSerializer):
 class AnswerSerializer(serializers.ModelSerializer):
     question_id = serializers.IntegerField()
     selected_choice_id = serializers.IntegerField()
+
+    class Meta:
+        model = Answer
+        fields = ["question_id", "selected_choice_id"]
