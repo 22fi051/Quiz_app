@@ -12,21 +12,22 @@ export default function Question({ question, onAnswer }) {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">{question.question_text}</h2>
-      <ul>
+      <div className="h-96 bg-white p-8 rounded-lg text-center text-black shadow-lg flex items-center justify-center">
+        <h2 className="text-2xl font-semibold mb-4">{question.question_text}</h2>
+      </div>
+      <div className="grid grid-cols-2 gap-4 mt-6">
         {question.choices.map((choice) => (
-          <li key={choice.id} className="mb-2">
-            <button
-              onClick={() => handleChoiceSelect(choice)}
-              className={`w-full p-4 text-left border rounded ${
-                selectedChoice?.id === choice.id ? 'bg-blue-100' : 'bg-white'
-              }`}
-            >
-              {choice.choice_text}
-            </button>
-          </li>
+          <button
+            key={choice.id}
+            onClick={() => handleChoiceSelect(choice)}
+            className={`p-4 text-center border rounded hover:scale-105 ${
+              selectedChoice?.id === choice.id ? 'bg-indigo-200' : 'bg-white'
+            }`}
+          >
+            {choice.choice_text}
+          </button>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
