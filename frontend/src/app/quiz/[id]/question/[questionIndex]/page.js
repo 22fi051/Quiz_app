@@ -51,7 +51,7 @@ export default function QuestionPage({ params }) {
   };
 
   if (!currentQuestion) {
-    return <div>読み込み中...</div>;
+    return <div className="w-24 h-24 border-4 border-dashed rounded-full animate-spin border-white"></div>;
   }
 
   return (

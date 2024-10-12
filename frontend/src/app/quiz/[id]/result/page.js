@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ResultPage({ params }) {
   const { id } = params;
@@ -17,16 +17,24 @@ export default function ResultPage({ params }) {
 
   return (
     <div className="container mx-auto p-4 text-center">
-      <h1 className="text-3xl font-bold mb-4">結果発表</h1>
-      <p className="text-xl mb-6">
-        {totalQuestions}問中 {score}問正解しました！
-      </p>
-      <button
-        onClick={() => window.location.replace(`/quiz/${id}`)}
-        className="px-4 py-2 bg-blue-600 text-white rounded"
-      >
-        もう一度プレイ
-      </button>
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+        <h1 className="text-3xl font-bold mb-4">結果</h1>
+        <p className="text-4xl mt-12 mb-12">
+          {totalQuestions}問中 {score}問正解しました！
+        </p>
+        <button
+          onClick={() => window.location.replace(`/quiz/${id}`)}
+          className="px-6 py-3 border border-indigo-700 text-indigo-700 font-semibold rounded hover:bg-indigo-700 hover:text-white transition"
+        >
+          もう一度プレイ
+        </button>
+        <button
+          onClick={() => window.location.replace(`/quiz`)}
+          className="px-6 py-3 border border-indigo-700 text-indigo-700 font-semibold rounded hover:bg-indigo-700 hover:text-white transition"
+        >
+          問題一覧へ
+        </button>
+      </div>
     </div>
   );
 }
