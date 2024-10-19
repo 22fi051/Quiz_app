@@ -11,3 +11,7 @@ db.sqlite3
 
 secrets/
 venv/
+
+.env.dev
+
+.env

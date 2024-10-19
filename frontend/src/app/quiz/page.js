@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default async function QuizListPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/quiz`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/quiz`, {
     cache: "no-store",
   });
   if (!res.ok) {
